@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="never" default-locale="id-ID">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0">
   <info>
     <title>Universitas Borobudur - Program Doktor Ilmu Hukum (catatan kaki)</title>
     <title-short>PDIH Borobudur</title-short>
-    <id>http://www.zotero.org/styles/pdih-universitas-borobudur</id>
-    <link href="http://www.zotero.org/styles/pdih-universitas-borobudur" rel="self"/>
+    <id>https://raw.githubusercontent.com/alfredalvar0/alfredalvar0/main/pdih-borobudur.csl</id>
+    <link href="https://raw.githubusercontent.com/alfredalvar0/alfredalvar0/main/pdih-borobudur.csl" rel="self"/>
     <author>
-      <name>Disusun untuk Andi Dedi Wijaya</name>
+      <name>Andi Dedi Wijaya</name>
     </author>
     <category citation-format="note"/>
     <category field="law"/>
+    <category field="generic-base"/>
     <summary>Gaya catatan kaki dan daftar pustaka sesuai Pedoman Penulisan Usulan Penelitian (Proposal) Disertasi dan Penulisan Disertasi, Program Doktor Ilmu Hukum, Program Pascasarjana Universitas Borobudur, Jakarta, 2024.</summary>
-    <updated>2026-10-20T00:00:00+07:00</updated>
+    <updated>2026-10-20T14:30:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
-  <locale xml:lang="id">
+  <locale>
     <style-options punctuation-in-quote="true"/>
     <terms>
       <term name="and">dan</term>
