@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="never" default-locale="id-ID">
+  <info>
+    <title>Universitas Borobudur - Program Doktor Ilmu Hukum (catatan kaki)</title>
+    <title-short>PDIH Borobudur</title-short>
+    <id>http://www.zotero.org/styles/pdih-universitas-borobudur</id>
+    <link href="http://www.zotero.org/styles/pdih-universitas-borobudur" rel="self"/>
+    <author>
+      <name>Disusun untuk Andi Dedi Wijaya</name>
+    </author>
+    <category citation-format="note"/>
+    <category field="law"/>
+    <summary>Gaya catatan kaki dan daftar pustaka sesuai Pedoman Penulisan Usulan Penelitian (Proposal) Disertasi dan Penulisan Disertasi, Program Doktor Ilmu Hukum, Program Pascasarjana Universitas Borobudur, Jakarta, 2024.</summary>
+    <updated>2026-10-20T00:00:00+07:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="id">
+    <style-options punctuation-in-quote="true"/>
+    <terms>
+      <term name="and">dan</term>
+      <term name="et-al">dkk.</term>
+      <term name="in">di dalam</term>
+      <term name="accessed">diakses</term>
+      <term name="page" form="short">
+        <single>hal.</single>
+        <multiple>hal.</multiple>
+      </term>
+      <term name="section" form="short">
+        <single>Pasal</single>
+        <multiple>Pasal</multiple>
+      </term>
+      <term name="paragraph" form="short">
+        <single>ayat</single>
+        <multiple>ayat</multiple>
+      </term>
+      <term name="volume" form="short">Vol.</term>
+      <term name="issue" form="short">No.</term>
+      <term name="edition" form="short">ed.</term>
+      <term name="editor" form="short">
+        <single>ed.</single>
+        <multiple>eds.</multiple>
+      </term>
+      <term name="translator" form="verb">diterjemahkan oleh</term>
+      <term name="month-01">Januari</term>
+      <term name="month-02">Februari</term>
+      <term name="month-03">Maret</term>
+      <term name="month-04">April</term>
+      <term name="month-05">Mei</term>
+      <term name="month-06">Juni</term>
+      <term name="month-07">Juli</term>
+      <term name="month-08">Agustus</term>
+      <term name="month-09">September</term>
+      <term name="month-10">Oktober</term>
+      <term name="month-11">November</term>
+      <term name="month-12">Desember</term>
+    </terms>
+  </locale>
+
+  <!-- ====================== NAMA ====================== -->
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " delimiter-precedes-last="never" name-as-sort-order="first" sort-separator=", " initialize="false"/>
+      <substitute>
+        <names variable="editor"/>
+        <text macro="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="author-bib">
+    <names variable="author">
+      <name and="text" delimiter=", " delimiter-precedes-last="never" name-as-sort-order="first" sort-separator=", " initialize="false"/>
+      <substitute>
+        <names variable="editor"/>
+        <text macro="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="editor-in">
+    <names variable="editor">
+      <name and="text" delimiter=", " delimiter-precedes-last="never" initialize="false"/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <macro name="translator">
+    <names variable="translator">
+      <label form="verb" suffix=" "/>
+      <name and="text" delimiter=", " delimiter-precedes-last="never" initialize="false"/>
+    </names>
+  </macro>
+
+  <!-- ====================== JUDUL ====================== -->
+  <macro name="title">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper chapter entry-encyclopedia entry-dictionary paper-conference thesis webpage post-weblog" match="any">
+        <text variable="title" quotes="true"/>
+      </if>
+      <else-if type="legislation bill legal_case treaty" match="any">
+        <text variable="title"/>
+      </else-if>
+      <else>
+        <text variable="title" font-style="italic"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="title-short">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper chapter entry-encyclopedia entry-dictionary paper-conference thesis webpage post-weblog" match="any">
+        <text variable="title" form="short" quotes="true"/>
+      </if>
+      <else-if type="legislation bill legal_case treaty" match="any">
+        <text variable="title" form="short"/>
+      </else-if>
+      <else>
+        <text variable="title" form="short" font-style="italic"/>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- ====================== PENERBITAN ====================== -->
+  <macro name="place-publisher">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="date-month-year">
+    <date variable="issued" delimiter=" ">
+      <date-part name="month"/>
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="date-full">
+    <date variable="issued" delimiter=" ">
+      <date-part name="day"/>
+      <date-part name="month"/>
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="accessed">
+    <group delimiter=" " prefix="(" suffix=")">
+      <text term="accessed"/>
+      <date variable="accessed" delimiter=" ">
+        <date-part name="day"/>
+        <date-part name="month"/>
+        <date-part name="year"/>
+      </date>
+    </group>
+  </macro>
+  <macro name="edition">
+    <choose>
+      <if is-numeric="edition">
+        <group delimiter=" ">
+          <text value="Edisi ke-"/>
+          <number variable="edition"/>
+        </group>
+      </if>
+      <else>
+        <text variable="edition"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="jilid">
+    <group delimiter=" ">
+      <text value="Jilid"/>
+      <text variable="volume"/>
+    </group>
+  </macro>
+  <macro name="vol-issue">
+    <group delimiter=", ">
+      <group delimiter=" ">
+        <text term="volume" form="short"/>
+        <text variable="volume"/>
+      </group>
+      <group delimiter=" ">
+        <text term="issue" form="short"/>
+        <text variable="issue"/>
+      </group>
+    </group>
+  </macro>
+  <macro name="locator">
+    <group delimiter=" ">
+      <label variable="locator" form="short"/>
+      <text variable="locator"/>
+    </group>
+  </macro>
+  <macro name="pages-bib">
+    <group delimiter=" ">
+      <text value="hal."/>
+      <text variable="page"/>
+    </group>
+  </macro>
+
+  <!-- ====================== ISI ENTRI (dipakai catatan kaki & daftar pustaka) ====================== -->
+  <macro name="body">
+    <choose>
+      <if type="book report manuscript" match="any">
+        <group delimiter=", ">
+          <text macro="title"/>
+          <text macro="jilid"/>
+          <text macro="edition"/>
+          <text macro="translator"/>
+          <text macro="place-publisher"/>
+          <text macro="year"/>
+        </group>
+      </if>
+      <else-if type="chapter paper-conference" match="any">
+        <group delimiter=", ">
+          <text macro="title"/>
+          <group delimiter=" ">
+            <text term="in"/>
+            <group delimiter=", ">
+              <text macro="editor-in"/>
+              <text variable="container-title" font-style="italic"/>
+            </group>
+          </group>
+          <text macro="place-publisher"/>
+          <text macro="year"/>
+        </group>
+      </else-if>
+      <else-if type="entry-encyclopedia entry-dictionary" match="any">
+        <group delimiter=", ">
+          <text macro="title"/>
+          <group delimiter=" ">
+            <text term="in"/>
+            <text variable="container-title" font-style="italic"/>
+          </group>
+          <group delimiter=" ">
+            <text term="volume" form="short"/>
+            <text variable="volume"/>
+          </group>
+          <text macro="place-publisher"/>
+          <text macro="year"/>
+        </group>
+      </else-if>
+      <else-if type="article-journal">
+        <group delimiter=", ">
+          <text macro="title"/>
+          <text variable="container-title" text-decoration="underline"/>
+          <text macro="vol-issue"/>
+          <text macro="date-month-year"/>
+        </group>
+      </else-if>
+      <else-if type="article-newspaper article-magazine" match="any">
+        <group delimiter=", ">
+          <text macro="title"/>
+          <text variable="container-title" text-decoration="underline"/>
+          <text macro="date-full"/>
+        </group>
+      </else-if>
+      <else-if type="thesis">
+        <group delimiter=", ">
+          <text macro="title"/>
+          <text variable="genre"/>
+          <text variable="publisher"/>
+          <text variable="publisher-place"/>
+          <text macro="year"/>
+        </group>
+      </else-if>
+      <else-if type="interview personal_communication" match="any">
+        <group delimiter=", ">
+          <text value="Wawancara"/>
+          <group delimiter=": ">
+            <text variable="publisher-place"/>
+            <text macro="date-full"/>
+          </group>
+        </group>
+      </else-if>
+      <else-if type="legislation bill legal_case treaty" match="any">
+        <text macro="title"/>
+      </else-if>
+      <else-if type="webpage post-weblog post" match="any">
+        <group delimiter=" ">
+          <group delimiter=", ">
+            <text macro="title"/>
+            <text variable="URL"/>
+          </group>
+          <text macro="accessed"/>
+        </group>
+      </else-if>
+      <else>
+        <group delimiter=", ">
+          <text macro="title"/>
+          <text macro="place-publisher"/>
+          <text macro="year"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- Penulis + isi; peraturan & putusan tanpa penulis -->
+  <macro name="full-entry">
+    <choose>
+      <if type="legislation bill legal_case treaty" match="any">
+        <text macro="body"/>
+      </if>
+      <else-if type="webpage post-weblog post" match="any">
+        <group delimiter=", ">
+          <names variable="author">
+            <name and="text" delimiter=", " delimiter-precedes-last="never" name-as-sort-order="first" sort-separator=", " initialize="false"/>
+          </names>
+          <text macro="body"/>
+        </group>
+      </else-if>
+      <else>
+        <group delimiter=", ">
+          <text macro="author"/>
+          <text macro="body"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- Kelompok daftar pustaka -->
+  <macro name="type-group">
+    <choose>
+      <if type="book report manuscript chapter entry-encyclopedia entry-dictionary thesis" match="any">
+        <text value="1"/>
+      </if>
+      <else-if type="article-journal paper-conference" match="any">
+        <text value="2"/>
+      </else-if>
+      <else-if type="article-newspaper article-magazine" match="any">
+        <text value="3"/>
+      </else-if>
+      <else-if type="legislation bill treaty" match="any">
+        <text value="4"/>
+      </else-if>
+      <else-if type="legal_case">
+        <text value="5"/>
+      </else-if>
+      <else-if type="webpage post-weblog post" match="any">
+        <text value="6"/>
+      </else-if>
+      <else-if type="interview personal_communication" match="any">
+        <text value="7"/>
+      </else-if>
+      <else>
+        <text value="8"/>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- ====================== CATATAN KAKI ====================== -->
+  <citation>
+    <layout delimiter="; ">
+      <choose>
+        <if position="ibid-with-locator">
+          <group delimiter=", ">
+            <text value="Ibid." font-style="italic"/>
+            <text macro="locator"/>
+          </group>
+        </if>
+        <else-if position="ibid">
+          <text value="Loc.cit." font-style="italic"/>
+        </else-if>
+        <else-if position="subsequent">
+          <choose>
+            <if type="legislation bill legal_case treaty" match="any">
+              <group delimiter=", ">
+                <text macro="title-short"/>
+                <text macro="locator"/>
+              </group>
+            </if>
+            <else>
+              <group delimiter=", ">
+                <text macro="author"/>
+                <choose>
+                  <if disambiguate="true">
+                    <text macro="title-short"/>
+                  </if>
+                </choose>
+                <text value="Op.cit." font-style="italic"/>
+                <text macro="locator"/>
+              </group>
+            </else>
+          </choose>
+        </else-if>
+        <else>
+          <group delimiter=", ">
+            <text macro="full-entry"/>
+            <text macro="locator"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+
+  <!-- ====================== DAFTAR PUSTAKA ====================== -->
+  <bibliography subsequent-author-substitute="_______________" entry-spacing="1">
+    <sort>
+      <key macro="type-group"/>
+      <key macro="author-bib"/>
+      <key variable="issued"/>
+      <key variable="title"/>
+    </sort>
+    <layout suffix=".">
+      <choose>
+        <if type="article-journal">
+          <group delimiter=", ">
+            <text macro="full-entry"/>
+            <text macro="pages-bib"/>
+          </group>
+        </if>
+        <else-if type="article-newspaper article-magazine entry-encyclopedia entry-dictionary" match="any">
+          <group delimiter=", ">
+            <text macro="full-entry"/>
+            <text macro="pages-bib"/>
+          </group>
+        </else-if>
+        <else>
+          <text macro="full-entry"/>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
